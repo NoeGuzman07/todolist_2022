@@ -108,3 +108,16 @@ header a {
     display: inline;
     line-height: 48px;
 }
+
+ul li {
+    background-color: #17181d;
+    height: 48px;
+    width: 314px;
+    padding-left: 12px;
+    margin: 0 auto 10px auto;
+    line-height: 48px;
+    list-style: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
