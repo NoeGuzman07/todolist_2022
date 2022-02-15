@@ -1,13 +1,16 @@
 $(document).ready(function () {
+    
     var i = 0;
+    
     for (i = 0; i < localStorage.length; i++) {
         var taskID = "task-" + i;
         $('#taskList').append("<li id='" + taskID + "'>" + localStorage.getItem(taskID) + "</li>");
     }
+
     $('#clear').click(function () {
         localStorage.clear();
-
     });
+
     $('#formTask').submit(function () {
         if ($('#taskInput').val() !== "") {
             var taskID = "task-" + i;
@@ -22,6 +25,7 @@ $(document).ready(function () {
         }
         return false;
     });
+
     $('#taskList').on("click", "li", function (event) {
         self = $(this);
         taskID = self.attr('id');
@@ -30,4 +34,5 @@ $(document).ready(function () {
             self.remove();
         });
     });
+
 });
