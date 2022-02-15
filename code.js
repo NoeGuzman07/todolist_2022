@@ -1,16 +1,17 @@
-$(document).ready(function() {
-    var i=0;
-    for(i=0; i<localStorage.length; i++) {
-        var taskID="task-" + i;
+$(document).ready(function () {
+    var i = 0;
+    for (i = 0; i < localStorage.length; i++) {
+        var taskID = "task-" + i;
         $('#taskList').append("<li id='" + taskID + "'>" + localStorage.getItem(taskID) + "</li>");
     }
-    $('#clear').click(function() {
+    $('#clear').click(function () {
         localStorage.clear();
+
     });
-    $('#formularioContainer').submit(function() {
-        if($('taskInput').val() !== "") {
+    $('#formTask').submit(function () {
+        if ($('#taskInput').val() !== "") {
             var taskID = "task-" + i;
-            var taskMessage = $('taskInput').val();
+            var taskMessage = $('#taskInput').val();
             localStorage.setItem(taskID, taskMessage);
             $('#taskList').append("<li class='task' id='" + taskID + "'>" + taskMessage + "</li>");
             var task = $('#' + taskID);
@@ -21,7 +22,6 @@ $(document).ready(function() {
         }
         return false;
     });
-
     $('#taskList').on("click", "li", function (event) {
         self = $(this);
         taskID = self.attr('id');
